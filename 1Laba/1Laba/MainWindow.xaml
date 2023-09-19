@@ -6,23 +6,14 @@
         xmlns:local="clr-namespace:_1Laba"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Button x:Name="Btn1"
-        HorizontalAlignment="Center"
-        VerticalAlignment="Center"
-        Width="150"
-        Height="30"
-        FontSize="17"
-        Content="Обычная кнопка"
-        Foreground="#006699"
-        BorderBrush="#303030">
-        <Button.Background>
-            <LinearGradientBrush>
-                <LinearGradientBrush.GradientStops>
-                    <GradientStop Color="LightBlue" Offset="0" />
-                    <GradientStop Color="DarkBlue" Offset="1" />
-                </LinearGradientBrush.GradientStops>
-            </LinearGradientBrush>
-        </Button.Background>
-    </Button>
-
+    <Window.Background>
+        <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+            <LinearGradientBrush.GradientStops>
+                <GradientStop Color="DarkBlue" Offset="0" />
+                <GradientStop Color="LightBlue" Offset="0.2" />
+                <GradientStop Color="LightBlue" Offset="0.8" />
+                <GradientStop Color="DarkBlue" Offset="1" />
+            </LinearGradientBrush.GradientStops>
+        </LinearGradientBrush>
+    </Window.Background>
 </Window>

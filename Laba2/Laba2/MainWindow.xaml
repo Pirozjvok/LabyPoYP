@@ -53,12 +53,12 @@
                 <Label Content="3.txt" />
             </StackPanel>
             <WrapPanel Grid.Row="1" Grid.Column="0" >
-                <Button Margin="10" Background="Yellow" Width="70" Height="70" Content="A" />
-                <Button Margin="10" Background="Red" Width="70" Height="70" Content="B" />
-                <Button Margin="10" Background="DarkGreen" Width="70" Height="70" Content="C" />
-                <Button Margin="10" Background="Blue" Width="70" Height="70" Content="D" />
-                <Button Margin="10" Background="Gray" Width="70" Height="70" Content="E" />
-                <Button Margin="10" Background="#cccc99" Width="70" Height="70" Content="F" />
+                <Label Margin="10" Background="Yellow" Width="70" Height="70" Content="A" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                <Label Margin="10" Background="Red" Width="70" Height="70" Content="B" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                <Label Margin="10" Background="DarkGreen" Width="70" Height="70" Content="C" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+                <Label Margin="10" Background="Blue" Width="70" Height="70" Content="D" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                <Label Margin="10" Background="Gray" Width="70" Height="70" Content="E" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                <Label Margin="10" Background="#cccc99" Width="70" Height="70" Content="F" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
             </WrapPanel>
         </Grid>
     </Grid>

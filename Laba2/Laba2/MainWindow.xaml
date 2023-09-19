@@ -5,8 +5,61 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Laba2"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Диспетчеры компоновки" Height="450" Width="800">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Label Grid.Row="0" Grid.Column="0" Content="Последние документы" />
+        <StackPanel Grid.Row="1" Grid.Column="0" Orientation="Vertical">
+            <Label Content="1.txt" />
+            <Label Content="2.txt" />
+            <Label Content="3.txt" />
+            <Label Content="4.txt" />
+            <Label Content="5.txt" />
+            <Label Content="6.txt" />
+        </StackPanel>
+        <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Horizontal">
+            <Button Content="Открыть" />
+            <Button Margin="10,0,0,0" Content="Сохранить" />
+            <Button Margin="10,0,0,0" Content="Закрыть" />
+            <Button Margin="10,0,0,0" Content="Обработать" />
+            <Button Margin="10,0,0,0" Content="О программе" />
+        </StackPanel>
+        <StackPanel Grid.Row="1" Grid.Column="0" Orientation="Vertical">
+            <Label Content="1.txt" />
+            <Label Content="2.txt" />
+            <Label Content="3.txt" />
+            <Label Content="4.txt" />
+            <Label Content="5.txt" />
+            <Label Content="6.txt" />
+        </StackPanel>
+        <Grid Grid.Row="1" Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Row="0" Grid.Column="0" Orientation="Horizontal">
+                <Label FontWeight="Bold" Content="1.txt" />
+                <Label Content="2.txt" />
+                <Label Content="3.txt" />
+            </StackPanel>
+            <WrapPanel Grid.Row="1" Grid.Column="0" >
+                <Button Margin="10" Background="Yellow" Width="70" Height="70" Content="A" />
+                <Button Margin="10" Background="Red" Width="70" Height="70" Content="B" />
+                <Button Margin="10" Background="DarkGreen" Width="70" Height="70" Content="C" />
+                <Button Margin="10" Background="Blue" Width="70" Height="70" Content="D" />
+                <Button Margin="10" Background="Gray" Width="70" Height="70" Content="E" />
+                <Button Margin="10" Background="#cccc99" Width="70" Height="70" Content="F" />
+            </WrapPanel>
+        </Grid>
     </Grid>
 </Window>

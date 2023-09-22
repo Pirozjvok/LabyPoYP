@@ -1,0 +1,35 @@
+﻿<Window x:Class="Laba4_4.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Laba4_4"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Window.Resources>
+        <x:Array x:Key="MyEditingModes" Type="{x:Type InkCanvasEditingMode}">
+            <InkCanvasEditingMode>Ink</InkCanvasEditingMode>
+            <InkCanvasEditingMode>Select</InkCanvasEditingMode>
+            <InkCanvasEditingMode>EraseByPoint</InkCanvasEditingMode>
+            <InkCanvasEditingMode>EraseByStroke</InkCanvasEditingMode>
+        </x:Array>
+        <x:Array x:Key="MyDrawingAttributes" Type="{x:Type DrawingAttributes}">
+            <DrawingAttributes Color="Red" Width="3" Height="3"/>
+            <DrawingAttributes Color="Green" Width="10" Height="10"/>
+            <DrawingAttributes Color="Blue" Width="15" Height="15"/>
+        </x:Array>
+    </Window.Resources>
+    <DockPanel>
+        <ToolBar DockPanel.Dock="Top">
+            <ComboBox Name="cbColors" Width="100" ItemsSource="{StaticResource MyDrawingAttributes}">
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding Path=Color}"></TextBlock>
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>
+            <ComboBox Name="cbEditingModes" Width="100" ItemsSource="{StaticResource MyEditingModes}"/>
+        </ToolBar>
+        <InkCanvas Name="inc" EditingMode="{Binding ElementName=cbEditingModes, Path=SelectedValue}" DefaultDrawingAttributes="{Binding ElementName=cbColors, Path=SelectedValue}"/>
+    </DockPanel>
+</Window>

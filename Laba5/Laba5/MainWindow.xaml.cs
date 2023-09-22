@@ -24,5 +24,64 @@ namespace Laba5
         {
             InitializeComponent();
         }
+        private void MenuItem_MouseEnter(object sender, MouseEventArgs e)
+        {
+            FrameworkElement element = sender as FrameworkElement;
+            if (element == null)
+                return;
+
+            switch (element.Tag.ToString())
+            {
+                case "close":
+                    statusBlock.Text = "Закрыть программу";
+                    break;
+                case "about":
+                    statusBlock.Text = "О программе";
+                    break;
+                case "change_color":
+                    statusBlock.Text = "Изменить цвет фона";
+                    break;
+                default:
+                    statusBlock.Text = string.Empty;
+                    break;
+            }
+        }
+        private void MenuItem_MouseLeave(object sender, MouseEventArgs e)
+        {
+            statusBlock.Text = string.Empty;
+        }
+
+        private void MenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            FrameworkElement element = sender as FrameworkElement;
+            if (element == null)
+                return;
+
+            switch (element.Tag.ToString())
+            {
+                case "close":
+                    Application.Current.Shutdown();
+                    break;
+                case "about":
+                    MessageBox.Show("Эту прогу создал топовый программист Pirozjvok!");
+                    break;
+                default:
+                    statusBlock.Text = string.Empty;
+                    break;
+            }
+        }
+
+        private void ComboBox_Selected(object sender, RoutedEventArgs e)
+        {
+            ComboBox element = sender as ComboBox;
+            if (element == null)
+                return;
+            ComboBoxItem item = element.SelectedItem as ComboBoxItem;
+            if (item == null)
+                return;
+            string color_hex = item.Tag.ToString();
+            Color color = (Color)ColorConverter.ConvertFromString(color_hex);
+            Background = new SolidColorBrush(color);
+        }
     }
 }

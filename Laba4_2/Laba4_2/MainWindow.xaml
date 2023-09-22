@@ -7,9 +7,10 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <StackPanel Orientation="Vertical">
-        <TextBox x:Name="t1" Text="{Binding ElementName=t2, Path=Text, Mode=OneWay}"/>
-        <TextBox x:Name="t2" Text="{Binding ElementName=t1, Path=Text, Mode=OneWay}" />
-        <Slider x:Name="slider1" />
-        <Slider x:Name="slider2" Value="{Binding ElementName=slider1, Path=Value}" />
+        <TextBox x:Name="t1" FontSize="{Binding ElementName=slider1, Path=Value, Mode=OneWay}">
+            Пример WPF-приложения для демонстрации привязки данных
+        </TextBox>
+        <TextBox x:Name="t2" Text="{Binding ElementName=slider1, Path=Value, Mode=TwoWay}"/>
+        <Slider x:Name="slider1" Minimum="1" Maximum="40" Value="14" TickFrequency="1" IsSnapToTickEnabled="True"/>
     </StackPanel>
 </Window>

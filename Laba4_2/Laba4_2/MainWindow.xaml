@@ -7,9 +7,9 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <StackPanel Orientation="Vertical">
-        <Slider Minimum="8" Maximum="30" x:Name="SliderFontSize"/>
-        <TextBlock x:Name="Message" FontSize="{Binding ElementName=SliderFontSize, Path=Value}">
-Пример WPF-приложения для демонстрации привязки данных
-        </TextBlock>
+        <TextBox x:Name="t1" Text="{Binding ElementName=t2, Path=Text, Mode=OneWay}"/>
+        <TextBox x:Name="t2" Text="{Binding ElementName=t1, Path=Text, Mode=OneWay}" />
+        <Slider x:Name="slider1" />
+        <Slider x:Name="slider2" Value="{Binding ElementName=slider1, Path=Value}" />
     </StackPanel>
 </Window>

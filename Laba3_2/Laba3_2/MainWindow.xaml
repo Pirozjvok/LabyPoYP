@@ -8,7 +8,9 @@
         Title="MainWindow" Height="450" Width="800">
     <DockPanel>
         <ToolBar DockPanel.Dock="Top">
-            <Slider Minimum="1" Maximum="20" Width="200" ValueChanged="Slider_ValueChanged"/>
+            <RadioButton GroupName="mode" Content="Рисование" IsChecked="True" Tag="draw" Checked="RadioButton_Checked"/>
+            <RadioButton GroupName="mode" Content="Редактирование" Tag="edit" Checked="RadioButton_Checked"/>
+            <RadioButton GroupName="mode" Content="Удаление" Tag="remove" Checked="RadioButton_Checked"/>
             <ComboBox SelectedIndex="0" Width="100" SelectionChanged="ComboBox_SelectionChanged">
                 <ComboBoxItem Content="Красный" Tag="#ff0000"/>
                 <ComboBoxItem Content="Зеленый" Tag="#00ff00"/>
@@ -19,9 +21,7 @@
                 <ComboBoxItem Content="Maroon :\" Tag="#990000"/>
                 <ComboBoxItem Content="Aqua :/" Tag="#00ffff"/>
             </ComboBox>
-            <RadioButton GroupName="mode" Content="Рисование" IsChecked="True" Tag="draw" Checked="RadioButton_Checked"/>
-            <RadioButton GroupName="mode" Content="Редактирование" Tag="edit" Checked="RadioButton_Checked"/>
-            <RadioButton GroupName="mode" Content="Удаление" Tag="remove" Checked="RadioButton_Checked"/>
+            <Slider Minimum="1" Maximum="20" Width="200" ValueChanged="Slider_ValueChanged"/>
         </ToolBar>
         <InkCanvas Name="incCanvas">
             <InkCanvas.DefaultDrawingAttributes>

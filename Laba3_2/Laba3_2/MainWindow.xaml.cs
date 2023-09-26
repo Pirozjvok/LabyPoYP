@@ -7,6 +7,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
+using System.Windows.Ink;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
@@ -29,8 +30,9 @@ namespace Laba3_2
         {
             if (incCanvas == null)
                 return;
-            incCanvas.DefaultDrawingAttributes.Width = (double)e.NewValue;
-            incCanvas.DefaultDrawingAttributes.Height = (double)e.NewValue;
+            incCanvas.DefaultDrawingAttributes.Width = e.NewValue;
+            incCanvas.DefaultDrawingAttributes.Height = e.NewValue;
+            incCanvas.EraserShape = new RectangleStylusShape(e.NewValue, e.NewValue);
         }
 
         private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)

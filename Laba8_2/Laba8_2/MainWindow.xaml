@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Canvas>
-        <DockPanel Canvas.Bottom="105" Canvas.Left="10">
+        <DockPanel Canvas.Bottom="105" Canvas.Left="11">
             <DockPanel.LayoutTransform>
                 <ScaleTransform ScaleX="0.7" ScaleY="0.7" />
             </DockPanel.LayoutTransform>
@@ -45,7 +45,7 @@
             </StackPanel>
             <TextBox AcceptsReturn="True" VerticalScrollBarVisibility="Visible" TextWrapping="Wrap" Height="100" Margin="4" Width="193"/>
         </DockPanel>
-        <DockPanel Canvas.Bottom="60" Canvas.Right="10">
+        <DockPanel Canvas.Bottom="60" Canvas.Left="649">
             <DockPanel.LayoutTransform>
                 <ScaleTransform ScaleX="0.7" ScaleY="0.7" />
             </DockPanel.LayoutTransform>
@@ -83,7 +83,7 @@
             </StackPanel>
             <TextBox AcceptsReturn="True" VerticalScrollBarVisibility="Visible" TextWrapping="Wrap" Height="100" Margin="4" Width="193"/>
         </DockPanel>
-        <DockPanel Canvas.Bottom="50" Canvas.Left="160">
+        <DockPanel Canvas.Bottom="50" Canvas.Left="161">
             <DockPanel.LayoutTransform>
                 <ScaleTransform ScaleX="0.7" ScaleY="0.7" />
             </DockPanel.LayoutTransform>
@@ -121,7 +121,7 @@
             </StackPanel>
             <TextBox AcceptsReturn="True" VerticalScrollBarVisibility="Visible" TextWrapping="Wrap" Height="100" Margin="4" Width="193"/>
         </DockPanel>
-        <DockPanel Canvas.Bottom="30" Canvas.Right="160">
+        <DockPanel Canvas.Bottom="30" Canvas.Left="495">
             <DockPanel.LayoutTransform>
                 <ScaleTransform ScaleX="0.7" ScaleY="0.7" />
             </DockPanel.LayoutTransform>
@@ -159,7 +159,7 @@
             </StackPanel>
             <TextBox AcceptsReturn="True" VerticalScrollBarVisibility="Visible" TextWrapping="Wrap" Height="100" Margin="4" Width="193"/>
         </DockPanel>
-        <DockPanel Canvas.Bottom="20" Canvas.Right="320">
+        <DockPanel Canvas.Bottom="20" Canvas.Left="329">
             <DockPanel.LayoutTransform>
                 <ScaleTransform ScaleX="0.7" ScaleY="0.7" />
             </DockPanel.LayoutTransform>

@@ -33,6 +33,8 @@ namespace Laba3_2
             incCanvas.DefaultDrawingAttributes.Width = e.NewValue;
             incCanvas.DefaultDrawingAttributes.Height = e.NewValue;
             incCanvas.EraserShape = new RectangleStylusShape(e.NewValue, e.NewValue);
+            incCanvas.EditingMode = InkCanvasEditingMode.None;
+            incCanvas.EditingMode = InkCanvasEditingMode.EraseByPoint;
         }
 
         private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)

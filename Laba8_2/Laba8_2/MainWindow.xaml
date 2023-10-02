@@ -49,11 +49,11 @@
                 <SkewTransform AngleY="20"/>
             </DockPanel.RenderTransform>
             <StackPanel Orientation="Horizontal" DockPanel.Dock="Top">
-                <Button Content="Копировать" Margin="4"/>
-                <Button Content="Вырезать" Margin="4"/>
-                <Button Content="Вставить" Margin="4"/>
+                <Button Content="Копировать" Margin="4" CommandTarget="{Binding ElementName=textBox1}" Command="Copy"/>
+                <Button Content="Вырезать" Margin="4" CommandTarget="{Binding ElementName=textBox1}" Command="Cut"/>
+                <Button Content="Вставить" Margin="4" CommandTarget="{Binding ElementName=textBox1}" Command="Paste"/>
             </StackPanel>
-            <TextBox/>
+            <TextBox x:Name="textBox1"/>
         </DockPanel>
         <DockPanel Canvas.Bottom="60" Canvas.Left="649" Style="{StaticResource Block}">
             <DockPanel.LayoutTransform>
@@ -63,11 +63,11 @@
                 <SkewTransform AngleY="-20"/>
             </DockPanel.RenderTransform>
             <StackPanel Orientation="Horizontal" DockPanel.Dock="Top">
-                <Button Content="Копировать" Margin="4"/>
-                <Button Content="Вырезать" Margin="4"/>
-                <Button Content="Вставить" Margin="4"/>
+                <Button Content="Копировать" Margin="4" CommandTarget="{Binding ElementName=textBox2}" Command="Copy"/>
+                <Button Content="Вырезать" Margin="4" CommandTarget="{Binding ElementName=textBox2}" Command="Cut"/>
+                <Button Content="Вставить" Margin="4" CommandTarget="{Binding ElementName=textBox2}" Command="Paste"/>
             </StackPanel>
-            <TextBox/>
+            <TextBox x:Name="textBox2"/>
         </DockPanel>
         <DockPanel Canvas.Bottom="50" Canvas.Left="161" Style="{StaticResource Block}">
             <DockPanel.LayoutTransform>
@@ -77,11 +77,11 @@
                 <SkewTransform AngleY="10"/>
             </DockPanel.RenderTransform>
             <StackPanel Orientation="Horizontal" DockPanel.Dock="Top">
-                <Button Content="Копировать" Margin="4"/>
-                <Button Content="Вырезать" Margin="4"/>
-                <Button Content="Вставить" Margin="4"/>
+                <Button Content="Копировать" Margin="4" CommandTarget="{Binding ElementName=textBox3}" Command="Copy"/>
+                <Button Content="Вырезать" Margin="4" CommandTarget="{Binding ElementName=textBox3}" Command="Cut"/>
+                <Button Content="Вставить" Margin="4" CommandTarget="{Binding ElementName=textBox3}" Command="Paste"/>
             </StackPanel>
-            <TextBox/>
+            <TextBox x:Name="textBox3"/>
         </DockPanel>
         <DockPanel Canvas.Bottom="30" Canvas.Left="495" Style="{StaticResource Block}">
             <DockPanel.LayoutTransform>
@@ -91,11 +91,11 @@
                 <SkewTransform AngleY="-10"/>
             </DockPanel.RenderTransform>
             <StackPanel Orientation="Horizontal" DockPanel.Dock="Top">
-                <Button Content="Копировать" Margin="4"/>
-                <Button Content="Вырезать" Margin="4"/>
-                <Button Content="Вставить" Margin="4"/>
+                <Button Content="Копировать" Margin="4" CommandTarget="{Binding ElementName=textBox4}" Command="Copy"/>
+                <Button Content="Вырезать" Margin="4" CommandTarget="{Binding ElementName=textBox4}" Command="Cut"/>
+                <Button Content="Вставить" Margin="4" CommandTarget="{Binding ElementName=textBox4}" Command="Paste"/>
             </StackPanel>
-            <TextBox/>
+            <TextBox x:Name="textBox4"/>
         </DockPanel>
         <DockPanel Canvas.Bottom="20" Canvas.Left="329" Style="{StaticResource Block}">
             <DockPanel.LayoutTransform>
@@ -105,11 +105,11 @@
                 <SkewTransform AngleY="0"/>
             </DockPanel.RenderTransform>
             <StackPanel Orientation="Horizontal" DockPanel.Dock="Top">
-                <Button Content="Копировать" Margin="4"/>
-                <Button Content="Вырезать" Margin="4"/>
-                <Button Content="Вставить" Margin="4"/>
+                <Button Content="Копировать" Margin="4" CommandTarget="{Binding ElementName=textBox5}" Command="Copy"/>
+                <Button Content="Вырезать" Margin="4" CommandTarget="{Binding ElementName=textBox5}" Command="Cut"/>
+                <Button Content="Вставить" Margin="4" CommandTarget="{Binding ElementName=textBox5}" Command="Paste"/>
             </StackPanel>
-            <TextBox/>
+            <TextBox x:Name="textBox5"/>
         </DockPanel>
     </Canvas>
 </Window>

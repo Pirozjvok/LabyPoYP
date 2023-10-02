@@ -21,117 +21,95 @@
             <DoubleAnimation Storyboard.TargetProperty="(Canvas.Left)" Duration="0:0:1"/>
             <DoubleAnimation Storyboard.TargetProperty="(Canvas.Bottom)" Duration="0:0:1"/>
         </Storyboard>
+        <Style TargetType="TextBox">
+            <Setter Property="Width" Value="193" />
+            <Setter Property="VerticalScrollBarVisibility" Value="Visible"/>
+            <Setter Property="TextWrapping" Value="Wrap"/>
+            <Setter Property="Margin" Value="4"/>
+            <Setter Property="Height" Value="100"/>
+            <Setter Property="AcceptsReturn" Value="True"/>
+        </Style>
+        <Style TargetType="DockPanel" x:Key="Block">
+            <Style.Triggers>
+                <EventTrigger RoutedEvent="GotFocus">
+                    <BeginStoryboard Storyboard="{StaticResource Active}"/>
+                </EventTrigger>
+                <EventTrigger RoutedEvent="LostFocus">
+                    <BeginStoryboard Storyboard="{StaticResource Default}"/>
+                </EventTrigger>
+            </Style.Triggers>
+        </Style>
     </Window.Resources>
     <Canvas>
-        <DockPanel Canvas.Bottom="105" Canvas.Left="11">
+        <DockPanel Canvas.Bottom="105" Canvas.Left="11" Style="{StaticResource Block}">
             <DockPanel.LayoutTransform>
                 <ScaleTransform ScaleX="0.7" ScaleY="0.7" />
             </DockPanel.LayoutTransform>
             <DockPanel.RenderTransform>
                 <SkewTransform AngleY="20"/>
             </DockPanel.RenderTransform>
-            <DockPanel.Triggers>
-                <EventTrigger RoutedEvent="GotFocus">
-                    <BeginStoryboard Storyboard="{StaticResource Active}"/>
-                </EventTrigger>
-                <EventTrigger RoutedEvent="LostFocus">
-                    <BeginStoryboard Storyboard="{StaticResource Default}"/>
-                </EventTrigger>
-            </DockPanel.Triggers>
             <StackPanel Orientation="Horizontal" DockPanel.Dock="Top">
                 <Button Content="Копировать" Margin="4"/>
                 <Button Content="Вырезать" Margin="4"/>
                 <Button Content="Вставить" Margin="4"/>
             </StackPanel>
-            <TextBox AcceptsReturn="True" VerticalScrollBarVisibility="Visible" TextWrapping="Wrap" Height="100" Margin="4" Width="193"/>
+            <TextBox/>
         </DockPanel>
-        <DockPanel Canvas.Bottom="60" Canvas.Left="649">
+        <DockPanel Canvas.Bottom="60" Canvas.Left="649" Style="{StaticResource Block}">
             <DockPanel.LayoutTransform>
                 <ScaleTransform ScaleX="0.7" ScaleY="0.7" />
             </DockPanel.LayoutTransform>
             <DockPanel.RenderTransform>
                 <SkewTransform AngleY="-20"/>
             </DockPanel.RenderTransform>
-            <DockPanel.Triggers>
-                <EventTrigger RoutedEvent="GotFocus">
-                    <BeginStoryboard Storyboard="{StaticResource Active}"/>
-                </EventTrigger>
-                <EventTrigger RoutedEvent="LostFocus">
-                    <BeginStoryboard Storyboard="{StaticResource Default}"/>
-                </EventTrigger>
-            </DockPanel.Triggers>
             <StackPanel Orientation="Horizontal" DockPanel.Dock="Top">
                 <Button Content="Копировать" Margin="4"/>
                 <Button Content="Вырезать" Margin="4"/>
                 <Button Content="Вставить" Margin="4"/>
             </StackPanel>
-            <TextBox AcceptsReturn="True" VerticalScrollBarVisibility="Visible" TextWrapping="Wrap" Height="100" Margin="4" Width="193"/>
+            <TextBox/>
         </DockPanel>
-        <DockPanel Canvas.Bottom="50" Canvas.Left="161">
+        <DockPanel Canvas.Bottom="50" Canvas.Left="161" Style="{StaticResource Block}">
             <DockPanel.LayoutTransform>
                 <ScaleTransform ScaleX="0.7" ScaleY="0.7" />
             </DockPanel.LayoutTransform>
             <DockPanel.RenderTransform>
                 <SkewTransform AngleY="10"/>
             </DockPanel.RenderTransform>
-            <DockPanel.Triggers>
-                <EventTrigger RoutedEvent="GotFocus">
-                    <BeginStoryboard Storyboard="{StaticResource Active}"/>
-                </EventTrigger>
-                <EventTrigger RoutedEvent="LostFocus">
-                    <BeginStoryboard Storyboard="{StaticResource Default}"/>
-                </EventTrigger>
-            </DockPanel.Triggers>
             <StackPanel Orientation="Horizontal" DockPanel.Dock="Top">
                 <Button Content="Копировать" Margin="4"/>
                 <Button Content="Вырезать" Margin="4"/>
                 <Button Content="Вставить" Margin="4"/>
             </StackPanel>
-            <TextBox AcceptsReturn="True" VerticalScrollBarVisibility="Visible" TextWrapping="Wrap" Height="100" Margin="4" Width="193"/>
+            <TextBox/>
         </DockPanel>
-        <DockPanel Canvas.Bottom="30" Canvas.Left="495">
+        <DockPanel Canvas.Bottom="30" Canvas.Left="495" Style="{StaticResource Block}">
             <DockPanel.LayoutTransform>
                 <ScaleTransform ScaleX="0.7" ScaleY="0.7" />
             </DockPanel.LayoutTransform>
             <DockPanel.RenderTransform>
                 <SkewTransform AngleY="-10"/>
             </DockPanel.RenderTransform>
-            <DockPanel.Triggers>
-                <EventTrigger RoutedEvent="GotFocus">
-                    <BeginStoryboard Storyboard="{StaticResource Active}"/>
-                </EventTrigger>
-                <EventTrigger RoutedEvent="LostFocus">
-                    <BeginStoryboard Storyboard="{StaticResource Default}"/>
-                </EventTrigger>
-            </DockPanel.Triggers>
             <StackPanel Orientation="Horizontal" DockPanel.Dock="Top">
                 <Button Content="Копировать" Margin="4"/>
                 <Button Content="Вырезать" Margin="4"/>
                 <Button Content="Вставить" Margin="4"/>
             </StackPanel>
-            <TextBox AcceptsReturn="True" VerticalScrollBarVisibility="Visible" TextWrapping="Wrap" Height="100" Margin="4" Width="193"/>
+            <TextBox/>
         </DockPanel>
-        <DockPanel Canvas.Bottom="20" Canvas.Left="329">
+        <DockPanel Canvas.Bottom="20" Canvas.Left="329" Style="{StaticResource Block}">
             <DockPanel.LayoutTransform>
                 <ScaleTransform ScaleX="0.7" ScaleY="0.7" />
             </DockPanel.LayoutTransform>
             <DockPanel.RenderTransform>
                 <SkewTransform AngleY="0"/>
             </DockPanel.RenderTransform>
-            <DockPanel.Triggers>
-                <EventTrigger RoutedEvent="GotFocus">
-                    <BeginStoryboard Storyboard="{StaticResource Active}"/>
-                </EventTrigger>
-                <EventTrigger RoutedEvent="LostFocus">
-                    <BeginStoryboard Storyboard="{StaticResource Default}"/>
-                </EventTrigger>
-            </DockPanel.Triggers>
             <StackPanel Orientation="Horizontal" DockPanel.Dock="Top">
                 <Button Content="Копировать" Margin="4"/>
                 <Button Content="Вырезать" Margin="4"/>
                 <Button Content="Вставить" Margin="4"/>
             </StackPanel>
-            <TextBox AcceptsReturn="True" VerticalScrollBarVisibility="Visible" TextWrapping="Wrap" Height="100" Margin="4" Width="193"/>
+            <TextBox/>
         </DockPanel>
     </Canvas>
 </Window>

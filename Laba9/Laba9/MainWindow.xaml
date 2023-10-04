@@ -6,14 +6,38 @@
         xmlns:local="clr-namespace:Laba9"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        <Ellipse Margin="10" Width="200" Height="200">
+    <Window.Resources>
+        <Storyboard x:Key="ButtonAnimation">
+            <PointAnimation Storyboard.TargetName="gradient" Storyboard.TargetProperty="GradientOrigin" From="0,0.3" To="1,0.3" RepeatBehavior="Forever" AutoReverse="True"/>
+            <DoubleAnimation Storyboard.TargetName="light" Storyboard.TargetProperty="(Canvas.Left)" From="20" To="300" RepeatBehavior="Forever" AutoReverse="True"/>
+        </Storyboard>
+    </Window.Resources>
+    <Window.Triggers>
+        <EventTrigger RoutedEvent="Loaded">
+            <BeginStoryboard Storyboard="{StaticResource ButtonAnimation}"/>
+        </EventTrigger>
+    </Window.Triggers>
+    <Canvas>
+        <Ellipse Width="75" Height="75" Name="light" Canvas.Left="20" Canvas.Top="20">
             <Ellipse.Fill>
-                <RadialGradientBrush GradientOrigin="0.3,0.3">
+                <SolidColorBrush Color="White"/>
+            </Ellipse.Fill>
+        </Ellipse>
+        <Ellipse Width="200" Height="200" Canvas.Left="100" Name="ball" Canvas.Top="120">
+            <Ellipse.Fill>
+                <RadialGradientBrush x:Name="gradient" GradientOrigin="0.3,0.3">
                     <GradientStop Color="White" Offset="0"></GradientStop>
                     <GradientStop Color="Blue" Offset="1"></GradientStop>
                 </RadialGradientBrush>
             </Ellipse.Fill>
         </Ellipse>
-    </Grid>
+        <Rectangle Width="200" Height="10" Canvas.Left="100" Canvas.Top="350">
+            <Rectangle.Fill>
+                <VisualBrush Visual="{Binding ElementName=ball}" />
+            </Rectangle.Fill>
+        </Rectangle>
+    </Canvas>
+    <Window.Background>
+        <SolidColorBrush Color="#35363A"/>
+    </Window.Background>
 </Window>

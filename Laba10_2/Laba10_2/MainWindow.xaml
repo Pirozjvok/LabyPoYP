@@ -46,17 +46,48 @@
             <Setter Property="Canvas.Left" Value="13"/>
             <Setter Property="Canvas.Top" Value="57"/>
         </Style>
+        <Storyboard x:Key="enter">
+            <DoubleAnimation Storyboard.TargetProperty="RenderTransform.Children[0].ScaleX" To="0.5" Duration="0:0:0.25"/>
+            <DoubleAnimation Storyboard.TargetProperty="RenderTransform.Children[0].ScaleY" To="0.5" Duration="0:0:0.25"/>
+        </Storyboard>
+        <Storyboard x:Key="leave">
+            <DoubleAnimation Storyboard.TargetProperty="RenderTransform.Children[0].ScaleX" Duration="0:0:0.25"/>
+            <DoubleAnimation Storyboard.TargetProperty="RenderTransform.Children[0].ScaleY" Duration="0:0:0.25"/>
+        </Storyboard>
+        <Storyboard x:Key="rotate">
+            <DoubleAnimation Storyboard.TargetProperty="RenderTransform.Children[1].Angle" Duration="0:0:0.25" By="20"/>
+        </Storyboard>
+        <Style x:Key="sw" TargetType="Viewbox">
+            <Style.Triggers>
+                <EventTrigger RoutedEvent="MouseEnter">
+                    <BeginStoryboard Storyboard="{StaticResource enter}"/>
+                </EventTrigger>
+                <EventTrigger RoutedEvent="MouseLeave">
+                    <BeginStoryboard Storyboard="{StaticResource leave}"/>
+                </EventTrigger>
+                <EventTrigger RoutedEvent="MouseLeftButtonDown">
+                    <BeginStoryboard Storyboard="{StaticResource rotate}"/>
+                </EventTrigger>
+            </Style.Triggers>
+            <Style.Setters>
+                <Setter Property="RenderTransform">
+                    <Setter.Value>
+                        <TransformGroup>
+                            <ScaleTransform ScaleX="0.3" ScaleY="0.3"/>
+                            <RotateTransform Angle="0"/>
+                        </TransformGroup>
+                    </Setter.Value>
+                </Setter>
+            </Style.Setters>
+        </Style>
     </Window.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="1*"/>
-            <ColumnDefinition Width="1*"/>
-            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <Viewbox Grid.Column="0" RenderTransformOrigin="0.5,0.5">
-            <Viewbox.RenderTransform>
-                <ScaleTransform ScaleX="0.3" ScaleY="0.3"/>
-            </Viewbox.RenderTransform>
+        <Viewbox Grid.Column="0" Style="{StaticResource sw}" RenderTransformOrigin="0.5,0.5">
             <Canvas Width="103.92" Height="120">
                 <Polygon Style="{StaticResource hexagon}"/>
                 <Ellipse Style="{StaticResource center}"/>
@@ -64,10 +95,7 @@
                 <Rectangle Style="{StaticResource mrect}"/>
             </Canvas>
         </Viewbox>
-        <Viewbox Grid.Column="1" RenderTransformOrigin="0.5,0.5">
-            <Viewbox.RenderTransform>
-                <ScaleTransform ScaleX="0.3" ScaleY="0.3"/>
-            </Viewbox.RenderTransform>
+        <Viewbox Grid.Column="1" Style="{StaticResource sw}" RenderTransformOrigin="0.5,0.5">
             <Canvas Width="103.92" Height="120">
                 <Polygon Style="{StaticResource hexagon}"/>
                 <Ellipse Style="{StaticResource center}"/>
@@ -75,10 +103,7 @@
                 <Rectangle Style="{StaticResource mrect}"/>
             </Canvas>
         </Viewbox>
-        <Viewbox Grid.Column="2" RenderTransformOrigin="0.5,0.5">
-            <Viewbox.RenderTransform>
-                <ScaleTransform ScaleX="0.3" ScaleY="0.3"/>
-            </Viewbox.RenderTransform>
+        <Viewbox Grid.Column="2" Style="{StaticResource sw}" RenderTransformOrigin="0.5,0.5">
             <Canvas Width="103.92" Height="120">
                 <Polygon Style="{StaticResource hexagon}"/>
                 <Ellipse Style="{StaticResource center}"/>

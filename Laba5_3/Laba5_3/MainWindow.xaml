@@ -10,12 +10,12 @@
         <Style TargetType="StackPanel" x:Key="Gradient">
             <Setter Property="Background">
                 <Setter.Value>
-                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
                         <LinearGradientBrush.GradientStops>
-                            <GradientStop Color="DarkBlue" Offset="0" />
-                            <GradientStop Color="LightBlue" Offset="0.2" />
-                            <GradientStop Color="LightBlue" Offset="0.8" />
-                            <GradientStop Color="DarkBlue" Offset="1" />
+                            <GradientStop Color="Red" Offset="0" />
+                            <GradientStop Color="Yellow" Offset="0.2" />
+                            <GradientStop Color="Yellow" Offset="0.8" />
+                            <GradientStop Color="Red" Offset="1" />
                         </LinearGradientBrush.GradientStops>
                     </LinearGradientBrush>
                 </Setter.Value>
@@ -29,9 +29,11 @@
         </Style>
         <Style BasedOn="{StaticResource Wrap}" TargetType="TextBox" x:Key="Big">
             <Setter Property="FontSize" Value="30"/>
+            <Setter Property="MinHeight" Value="150"/>
         </Style>
         <Style BasedOn="{StaticResource Wrap}" TargetType="TextBox" x:Key="Micro">
             <Setter Property="FontSize" Value="10"/>
+            <Setter Property="MinHeight" Value="30"/>
         </Style>
     </Window.Resources>
     <Grid VerticalAlignment="Stretch">

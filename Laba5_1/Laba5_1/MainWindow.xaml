@@ -12,12 +12,13 @@
         </Style>
     </Window.Resources>
     <Canvas>
-        <Button Content="Test" 
+        <Button Content="Button" 
                 Padding="10" 
-                Canvas.Left="50" 
-                Canvas.Top="50" 
+                Canvas.Left="350" 
+                Canvas.Top="198" 
                 Width="100" 
-                Background="Green"> <!--Больший приоритет имеет атрибут-->
+                Background="Blue">
+            <!--Больший приоритет имеет атрибут-->
         </Button>
     </Canvas>
 </Window>

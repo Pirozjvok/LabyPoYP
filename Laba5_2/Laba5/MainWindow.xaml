@@ -14,7 +14,7 @@
     </Window.Resources>
     <DockPanel>
         <Menu DockPanel.Dock="Top">
-            <MenuItem Header="_Что-то сделать">
+            <MenuItem Header="_Действия">
                 <ComboBox SelectedIndex="0" Tag="change_color" Style="{StaticResource Events}" SelectionChanged="ComboBox_Selected">
                     <ComboBoxItem Content="Белый" Tag="#ffffff"/>
                     <ComboBoxItem Content="Красный" Tag="#ff0000"/>

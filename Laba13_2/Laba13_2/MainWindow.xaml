@@ -1,0 +1,105 @@
+﻿<Window x:Class="Laba13_2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Laba13_2"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="850" Width="800">
+    <Window.Resources>
+        <!--Тут короче мы задаем геометрию пути-->
+        <PathGeometry x:Key="PathAnimation">
+            <!--Начинается все с квадратичного кривого безье-->
+            <PathFigure StartPoint="0,300">
+                <QuadraticBezierSegment
+                    Point1="-300,50"
+                    Point2="-300, 0"/>
+            </PathFigure>
+            <!--Дальше кубическое кривое безье-->
+            <PathFigure StartPoint="-300,0">
+                <BezierSegment
+                    Point1="-300,-100"
+                    Point2="300,-100"
+                    Point3="300,0"/>
+            </PathFigure>
+            <!--И опять квадратичное кривое безье-->
+            <PathFigure StartPoint="300,0">
+                <QuadraticBezierSegment
+                    Point1="300,50"
+                    Point2="0, 300"/>
+            </PathFigure>
+        </PathGeometry>
+        <!--Задаем тут раскрадровку-->
+        <Storyboard RepeatBehavior="Forever" x:Key="Anim">
+            <!--Тут короче привязываемся к X и Y пути-->
+            <DoubleAnimationUsingPath Storyboard.TargetProperty="(Canvas.Left)"
+                                Duration="0:0:10"
+                                PathGeometry="{StaticResource ResourceKey=PathAnimation}"
+                                Source="X" />
+            <DoubleAnimationUsingPath Storyboard.TargetProperty="(Canvas.Top)"
+                                Duration="0:0:10"
+                                PathGeometry="{StaticResource ResourceKey=PathAnimation}"
+                                Source="Y" />
+            <!--А тут уже анимация размера и прозрачности-->
+            <!--Длительность анимации в 2 раза меньше т.к тут стоит AutoReverse-->
+            <DoubleAnimation Storyboard.TargetProperty="Width" To="50" AutoReverse="True" Duration="0:0:5"/>
+            <DoubleAnimation Storyboard.TargetProperty="Opacity" To="0.3" AutoReverse="True" Duration="0:0:5"/>
+        </Storyboard>
+        <Style TargetType="Viewbox">
+            <Setter Property="Width" Value="200"></Setter>
+        </Style>
+    </Window.Resources>
+    <Window.Triggers>
+
+    </Window.Triggers>
+    <Canvas>
+        <Canvas Canvas.Left="300" Canvas.Top="100">
+            <!--<Path Stroke="Green" StrokeThickness="3" Data="{StaticResource ResourceKey=PathAnimation}"/>-->
+            <Viewbox>
+                <Viewbox.Triggers>
+                    <EventTrigger RoutedEvent="Loaded">
+                        <BeginStoryboard Name="begin1" Storyboard="{StaticResource Anim}"/>
+                    </EventTrigger>
+                </Viewbox.Triggers>
+                <Image Source="out1.png" />
+            </Viewbox>
+            <Viewbox>
+                <Viewbox.Triggers>
+                    <EventTrigger RoutedEvent="Loaded">
+                        <BeginStoryboard Name="begin2" Storyboard="{StaticResource Anim}"/>
+                        <!--С помощью Seek мы пропускаем некоторое время анимации-->
+                        <SeekStoryboard BeginStoryboardName="begin1" Offset="0:0:2"/>
+                    </EventTrigger>
+                </Viewbox.Triggers>
+                <Image Source="out2.png" />
+            </Viewbox>
+            <Viewbox>
+                <Viewbox.Triggers>
+                    <EventTrigger RoutedEvent="Loaded">
+                        <BeginStoryboard Name="begin3" Storyboard="{StaticResource Anim}"/>
+                        <SeekStoryboard BeginStoryboardName="begin1" Offset="0:0:4"/>
+                    </EventTrigger>
+                </Viewbox.Triggers>
+                <Image Source="out3.png" />
+            </Viewbox>
+            <Viewbox>
+                <Viewbox.Triggers>
+                    <EventTrigger RoutedEvent="Loaded">
+                        <BeginStoryboard Name="begin4" Storyboard="{StaticResource Anim}"/>
+                        <SeekStoryboard BeginStoryboardName="begin1" Offset="0:0:6"/>
+                    </EventTrigger>
+                </Viewbox.Triggers>
+                <Image Source="out4.png" />
+            </Viewbox>
+            <Viewbox>
+                <Viewbox.Triggers>
+                    <EventTrigger RoutedEvent="Loaded">
+                        <BeginStoryboard Name="begin5" Storyboard="{StaticResource Anim}"/>
+                        <SeekStoryboard BeginStoryboardName="begin1" Offset="0:0:8"/>
+                    </EventTrigger>
+                </Viewbox.Triggers>
+                <Image Source="out5.png" />
+            </Viewbox>
+        </Canvas>
+    </Canvas>
+</Window>

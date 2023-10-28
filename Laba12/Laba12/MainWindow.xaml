@@ -16,11 +16,6 @@
             <DoubleAnimation Storyboard.TargetProperty="(Canvas.Top)" BeginTime="0:0:2"></DoubleAnimation>
             <DoubleAnimation Storyboard.TargetProperty="Width" BeginTime="0:0:2"></DoubleAnimation>
         </Storyboard>
-        
-        <Storyboard x:Key="Default">
-            <DoubleAnimation Storyboard.TargetProperty="(Canvas.Left)"></DoubleAnimation>
-            <DoubleAnimation Storyboard.TargetProperty="(Canvas.Top)"></DoubleAnimation>
-        </Storyboard>
 
         <Style x:Key="Sign" TargetType="FrameworkElement">
             <Style.Setters>
@@ -227,7 +222,6 @@
                 <Ellipse xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Canvas.Left="448.3" Canvas.Top="574.9" Width="20.7" Height="20.7" Name="circle28" Fill="#FF000000"/>
                 <Ellipse xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Canvas.Left="490.5" Canvas.Top="594.4" Width="16.1" Height="16.1" Name="circle30" Fill="#FF000000"/>
                 <Ellipse xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Canvas.Left="529.7" Canvas.Top="598.4" Width="20.7" Height="20.7" Name="circle32" Fill="#FF000000"/>
-                <!--Unknown tag: metadata-->
             </Canvas>
         </Viewbox>
 

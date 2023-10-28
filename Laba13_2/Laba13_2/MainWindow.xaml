@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Laba13_2"
         mc:Ignorable="d"
-        Title="MainWindow" Height="850" Width="800">
+        Title="MainWindow" Height="650" Width="800">
     <Window.Resources>
         <!--Тут короче мы задаем геометрию пути-->
         <PathGeometry x:Key="PathAnimation">
@@ -53,7 +53,7 @@
 
     </Window.Triggers>
     <Canvas>
-        <Canvas Canvas.Left="300" Canvas.Top="100">
+        <Canvas Canvas.Left="330" Canvas.Top="100">
             <!--<Path Stroke="Green" StrokeThickness="3" Data="{StaticResource ResourceKey=PathAnimation}"/>-->
             <Viewbox>
                 <Viewbox.Triggers>
@@ -63,7 +63,7 @@
                 </Viewbox.Triggers>
                 <Image Source="out1.png" />
             </Viewbox>
-            <Viewbox>
+            <Viewbox Width="150">
                 <Viewbox.Triggers>
                     <EventTrigger RoutedEvent="Loaded">
                         <BeginStoryboard Name="begin2" Storyboard="{StaticResource Anim}"/>
@@ -82,7 +82,7 @@
                 </Viewbox.Triggers>
                 <Image Source="out3.png" />
             </Viewbox>
-            <Viewbox>
+            <Viewbox Width="100">
                 <Viewbox.Triggers>
                     <EventTrigger RoutedEvent="Loaded">
                         <BeginStoryboard Name="begin4" Storyboard="{StaticResource Anim}"/>

@@ -1,0 +1,21 @@
+﻿<Window x:Class="Laba11_2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Laba11_2"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Canvas>
+
+        <TextBox x:Name="textBox" Width="200" Text="https://postila.ru/data/1e/69/83/7d/1e69837d2677676a2dd64af78393010b9db85c2a6b9acebed9eba21c8f0ba3ee.jpg"/>
+        <Image Canvas.Top="20" Width="200" MaxHeight="150" Source="{Binding ElementName=textBox, Path=Text}"/>
+        <Button/>
+        <Button Canvas.Top="170" Canvas.Left="40" Width="30" Height="30">
+            <Image Source="left.png"/>
+        </Button>
+        <Button Canvas.Top="170" Canvas.Left="120" Width="30" Height="30">
+            <Image Source="right.png"/>
+        </Button>
+    </Canvas>
+</Window>

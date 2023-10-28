@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Canvas>
-        <Button Content="Жмакай" 
+        <Button Content="Жми" 
                 Padding="15" 
                 FontSize="16"
                 Canvas.Left="10"

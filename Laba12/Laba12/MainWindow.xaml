@@ -5,19 +5,19 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Laba12"
         mc:Ignorable="d"
-        Title="MainWindow" Height="648" Width="1050">
+        Title="MainWindow" Height="648" Width="1080">
 
     <Window.Resources>
         <Storyboard x:Key="Active">
             <DoubleAnimation Storyboard.TargetProperty="(Canvas.Left)" To="400"></DoubleAnimation>
-            <DoubleAnimation Storyboard.TargetProperty="Width" To="600"></DoubleAnimation>
             <DoubleAnimation Storyboard.TargetProperty="(Canvas.Top)" To="0"></DoubleAnimation>
+            <DoubleAnimation Storyboard.TargetProperty="Width" To="600"></DoubleAnimation>
             <DoubleAnimation Storyboard.TargetProperty="(Canvas.Left)" BeginTime="0:0:2"></DoubleAnimation>
             <DoubleAnimation Storyboard.TargetProperty="(Canvas.Top)" BeginTime="0:0:2"></DoubleAnimation>
             <DoubleAnimation Storyboard.TargetProperty="Width" BeginTime="0:0:2"></DoubleAnimation>
         </Storyboard>
 
-        <Style x:Key="Sign" TargetType="FrameworkElement">
+        <Style x:Key="Sign" TargetType="Viewbox">
             <Style.Setters>
                 <Setter Property="Canvas.Left" Value="0"></Setter>
                 <Setter Property="Canvas.Top" Value="0"></Setter>
@@ -31,21 +31,21 @@
         </Style>
     </Window.Resources>
     
-    <Canvas>
-        <!--This file is NOT compatible with Silverlight-->
-        <Viewbox xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" Stretch="Uniform" Width="150" Style="{StaticResource Sign}">
+    <Canvas Margin="25">
+        <!--Векторная картинка-->
+        <Viewbox Stretch="Uniform" Width="150" Style="{StaticResource Sign}">
             <Viewbox.Triggers>
                 <EventTrigger RoutedEvent="MouseEnter">
                     <BeginStoryboard>
                         <Storyboard>
-                            <ColorAnimation Storyboard.TargetName="brush1" Storyboard.TargetProperty="Color" To="Yellow" Duration="0"></ColorAnimation>
+                            <ColorAnimation Storyboard.TargetName="path32" Storyboard.TargetProperty="Fill.(SolidColorBrush.Color)" To="Yellow" Duration="0:0:1"/>
                         </Storyboard>
                     </BeginStoryboard>
                 </EventTrigger>
                 <EventTrigger RoutedEvent="MouseLeave">
                     <BeginStoryboard>
                         <Storyboard>
-                            <ColorAnimation Storyboard.TargetName="brush1" Storyboard.TargetProperty="Color" Duration="0"></ColorAnimation>
+                            <ColorAnimation Storyboard.TargetName="path32" Storyboard.TargetProperty="Fill.(SolidColorBrush.Color)" Duration="0:0:1"/>
                         </Storyboard>
                     </BeginStoryboard>
                 </EventTrigger>
@@ -53,10 +53,7 @@
             <Canvas Name="svg52" Width="834.116" Height="734.423">
                 <Canvas.Resources/>
                 <!--Unknown tag: sodipodi:namedview-->
-                <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Name="path32">
-                    <Path.Fill>
-                        <SolidColorBrush Color="#FFFFFFFF" x:Name="brush1"/>
-                    </Path.Fill>
+                <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Name="path32" Fill="#FFFFFFFF">
                     <Path.Data>
                         <PathGeometry Figures="m  0 689.423 c 0 24.853 20.147 45 45 45 l 744.116 0 c 24.853 0 45 -20.147 45 -45 c 0 -7.899 -2.079 -15.659 -6.029 -22.5 l -372.058 -644.423 c -8.038 -13.923 -22.894 -22.5 -38.971 -22.5 c -16.077 0 -30.933 8.577 -38.971 22.5 l -372.058 644.423 c -3.950 6.841 -6.029 14.601 -6.029 22.5 z" FillRule="NonZero"/>
                     </Path.Data>
@@ -97,20 +94,20 @@
                 <!--Unknown tag: metadata-->
             </Canvas>
         </Viewbox>
-        <!--This file is NOT compatible with Silverlight-->
-        <Viewbox xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" Stretch="Uniform" Canvas.Top="150" Style="{StaticResource Sign}">
+        <!--Векторная картинка-->
+        <Viewbox Stretch="Uniform" Canvas.Top="150" Style="{StaticResource Sign}">
             <Viewbox.Triggers>
                 <EventTrigger RoutedEvent="MouseEnter">
                     <BeginStoryboard>
                         <Storyboard>
-                            <ColorAnimation Storyboard.TargetName="brush2" Storyboard.TargetProperty="Color" To="Yellow" Duration="0"></ColorAnimation>
+                            <ColorAnimation Storyboard.TargetName="path4" Storyboard.TargetProperty="Fill.(SolidColorBrush.Color)" To="Yellow" Duration="0:0:1"/>
                         </Storyboard>
                     </BeginStoryboard>
                 </EventTrigger>
                 <EventTrigger RoutedEvent="MouseLeave">
                     <BeginStoryboard>
                         <Storyboard>
-                            <ColorAnimation Storyboard.TargetName="brush2" Storyboard.TargetProperty="Color" Duration="0"></ColorAnimation>
+                            <ColorAnimation Storyboard.TargetName="path4" Storyboard.TargetProperty="Fill.(SolidColorBrush.Color)" Duration="0:0:1"/>
                         </Storyboard>
                     </BeginStoryboard>
                 </EventTrigger>
@@ -118,10 +115,7 @@
             <Canvas Name="svg18" Width="834.116" Height="734.423">
                 <Canvas.Resources/>
                 <!--Unknown tag: sodipodi:namedview-->
-                <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Name="path4">
-                    <Path.Fill>
-                        <SolidColorBrush Color="#FFFFFFFF" x:Name="brush2"/>
-                    </Path.Fill>
+                <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Name="path4" Fill="#FFFFFFFF">
                     <Path.Data>
                         <PathGeometry Figures="m 0 689.423 c 0 24.853 20.147 45 45 45 l 744.116 0 c 24.853 0 45 -20.147 45 -45 c 0 -7.899 -2.079 -15.659 -6.029 -22.5 l -372.058 -644.423 c -8.038 -13.923 -22.894 -22.5 -38.971 -22.5 c -16.077 0 -30.933 8.577 -38.971 22.5 l -372.058 644.423 c -3.950 6.841 -6.029 14.601 -6.029 22.5 z" FillRule="NonZero"/>
                     </Path.Data>
@@ -159,20 +153,20 @@
                 <!--Unknown tag: metadata-->
             </Canvas>
         </Viewbox>
-        <!--This file is NOT compatible with Silverlight-->
-        <Viewbox xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" Stretch="Uniform" Canvas.Top="300" Style="{StaticResource Sign}">
+        <!--Векторная картинка-->
+        <Viewbox Stretch="Uniform" Canvas.Top="300" Style="{StaticResource Sign}">
             <Viewbox.Triggers>
                 <EventTrigger RoutedEvent="MouseEnter">
                     <BeginStoryboard>
                         <Storyboard>
-                            <ColorAnimation Storyboard.TargetName="brush3" Storyboard.TargetProperty="Color" To="Yellow" Duration="0"></ColorAnimation>
+                            <ColorAnimation Storyboard.TargetName="path114" Storyboard.TargetProperty="Fill.(SolidColorBrush.Color)" To="Yellow" Duration="0:0:1"/>
                         </Storyboard>
                     </BeginStoryboard>
                 </EventTrigger>
                 <EventTrigger RoutedEvent="MouseLeave">
                     <BeginStoryboard>
                         <Storyboard>
-                            <ColorAnimation Storyboard.TargetName="brush3" Storyboard.TargetProperty="Color" Duration="0"></ColorAnimation>
+                            <ColorAnimation Storyboard.TargetName="path114" Storyboard.TargetProperty="Fill.(SolidColorBrush.Color)" Duration="0:0:1"/>
                         </Storyboard>
                     </BeginStoryboard>
                 </EventTrigger>
@@ -180,10 +174,7 @@
             <Canvas Name="svg34" Width="834.116" Height="734.423">
                 <Canvas.Resources/>
                 <!--Unknown tag: sodipodi:namedview-->
-                <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Name="path114">
-                    <Path.Fill>
-                        <SolidColorBrush Color="#FFFFFFFF" x:Name="brush3"/>
-                    </Path.Fill>
+                <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Name="path114" Fill="#FFFFFFFF">
                     <Path.Data>
                         <PathGeometry Figures="m 0 689.423 c 0 24.853 20.147 45 45 45 l 744.116 0 c 24.853 0 45 -20.147 45 -45 c 0 -7.899 -2.079 -15.659 -6.029 -22.5 l -372.058 -644.423 c -8.038 -13.923 -22.894 -22.5 -38.971 -22.5 c -16.077 0 -30.933 8.577 -38.971 22.5 l -372.058 644.423 c -3.950 6.841 -6.029 14.601 -6.029 22.5 z" FillRule="NonZero"/>
                     </Path.Data>
@@ -225,9 +216,17 @@
             </Canvas>
         </Viewbox>
 
-        <Image Source="RU_road_sign_1.2.png"  Canvas.Left="200" Style="{StaticResource Sign}"></Image>
-        <Image Source="RU_road_sign_1.10.png" Canvas.Top="150" Canvas.Left="200" Style="{StaticResource Sign}"></Image>
-        <Image Source="RU_road_sign_1.19.png" Canvas.Top="300" Canvas.Left="200" Style="{StaticResource Sign}"></Image>
-        
+        <!--Растровая картинка-->
+        <Viewbox Canvas.Left="200" Style="{StaticResource Sign}">
+            <Image Source="RU_road_sign_1.2.png"/>
+        </Viewbox>
+        <!--Растровая картинка-->
+        <Viewbox Canvas.Top="150" Canvas.Left="200" Style="{StaticResource Sign}">
+            <Image Source="RU_road_sign_1.10.png"/>
+        </Viewbox>
+        <!--Растровая картинка-->
+        <Viewbox Canvas.Top="300" Canvas.Left="200" Style="{StaticResource Sign}">
+            <Image Source="RU_road_sign_1.19.png"/>
+        </Viewbox>
     </Canvas>
 </Window>

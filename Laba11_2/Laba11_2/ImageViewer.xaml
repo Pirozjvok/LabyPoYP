@@ -1,0 +1,55 @@
+﻿<UserControl x:Class="Laba11_2.ImageViewer"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Laba11_2"
+             mc:Ignorable="d" 
+             d:DesignHeight="250" d:DesignWidth="200">
+
+    <UserControl.Resources>
+        <Style TargetType="Viewbox">
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding ElementName=btnRight, Path=IsPressed}" Value="True">
+                    <DataTrigger.EnterActions>
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation Storyboard.TargetProperty="LayoutTransform.Angle" By="90" Duration="0"/>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </DataTrigger.EnterActions>
+                </DataTrigger>
+                <DataTrigger Binding="{Binding ElementName=btnLeft, Path=IsPressed}" Value="True">
+                    <DataTrigger.EnterActions>
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation Storyboard.TargetProperty="LayoutTransform.Angle" By="-90" Duration="0"/>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </DataTrigger.EnterActions>
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+    </UserControl.Resources>
+    
+    <Canvas Width="200" Height="250">
+        <Canvas.Background>
+            <SolidColorBrush Color="White"/>
+        </Canvas.Background>
+        <TextBox x:Name="textBox" Width="200"/>
+
+        <Viewbox Canvas.Top="20" Width="200" MaxWidth="200" Height="200">
+            <Viewbox.LayoutTransform>
+                <RotateTransform Angle="0"/>
+            </Viewbox.LayoutTransform>
+            <Image Source="{Binding ElementName=textBox, Path=Text}" Name="image"/>
+        </Viewbox>
+
+        <Button Canvas.Top="220" Canvas.Left="40" Width="30" Height="30" Name="btnLeft">
+            <Image Source="left.png"/>
+        </Button>
+        <Button Canvas.Top="220" Canvas.Left="120" Width="30" Height="30" Name="btnRight">
+            <Image Source="right.png"/>
+        </Button>
+    </Canvas>
+</UserControl>
